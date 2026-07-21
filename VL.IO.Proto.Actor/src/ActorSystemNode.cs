@@ -1,6 +1,7 @@
 ﻿using Proto;
 using Proto.Remote;
 using Proto.Remote.GrpcNet;
+using VL.Core;
 using VL.Core.Import;
 
 namespace VL.IO.Proto.Actor
@@ -10,10 +11,10 @@ namespace VL.IO.Proto.Actor
     {
         private readonly ActorSystem _actorSystem;
         private GrpcNetRemote? _remote;
-        private bool _isRunning;
 
-        public ActorSystemNode()
+        public ActorSystemNode(NodeContext nodeContext)
         {
+            Log.SetLoggerFactory(new Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory());
             _actorSystem = new ActorSystem();
         }
 
@@ -33,13 +34,7 @@ namespace VL.IO.Proto.Actor
             _host = host;
             _port = port;
 
-            _ = StartServerAsync();
-        }
-
-        private async Task StartServerAsync()
-        {
-            await _remote?.StartAsync();
-            _isRunning = true;
+            _remote?.StartAsync().Wait();
         }
 
         public bool IsRunning => _remote?.Started ?? false;

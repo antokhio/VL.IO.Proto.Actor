@@ -17,11 +17,6 @@
         <Canvas Id="LxaKfTLb9p1PADnkwlEQQN" CanvasType="Group" />
         <Patch Id="GTaGqtx2RHQMguuuGj0PvK" Name="Create" />
         <Patch Id="SpRu8bqN2nhLnoSZdWzIrQ" Name="Update" />
-        <!--
-
-    ************************  ************************
-
--->
         <ProcessDefinition Id="QCBxH1d9JTANpN7rLfkbAi">
           <Fragment Id="S9sLQhc2JsRPUqCPNxmAAn" Patch="GTaGqtx2RHQMguuuGj0PvK" Enabled="true" />
           <Fragment Id="JH2p0Qtw5vzOIKaD7xLlGk" Patch="SpRu8bqN2nhLnoSZdWzIrQ" Enabled="true" />
@@ -32,4 +27,5 @@
   <PlatformDependency Id="IfhznIw6nViMIggkvavHpv" Location="./lib/Debug/net8.0/VL.IO.Proto.Actor.dll" IsForward="true" />
   <NugetDependency Id="P4r4o6V8mGGPBYbIKm5vHf" Location="Proto.Actor" Version="1.8.0" />
   <NugetDependency Id="MfP9LJcNjmKNV20tDkdpbY" Location="Proto.Remote" Version="1.8.0" />
+  <NugetDependency Id="ShWtLLdhxopP17F5dSvwzH" Location="Microsoft.Extensions.Logging.Configuration" Version="8.0.1" />
 </Document>
