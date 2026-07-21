@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Proto.Actor" Version="$(ProtoActorVersion)" />
+    <PackageReference Include="Proto.Remote" Version="$(ProtoActorVersion)" />
     <PackageReference Include="VL.Core" Version="$(VLVersion)" />
   </ItemGroup>
 </Project>

@@ -4,5 +4,5 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="VL.IO.Proto.Actor/VL.IO.ProtoActor.csproj" />
+  <Project Path="VL.IO.Proto.Actor/src/VL.IO.Proto.Actor.csproj" />
 </Solution>

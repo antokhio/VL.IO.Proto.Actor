@@ -1,3 +1,6 @@
-﻿using VL.Core.Import;
+﻿using Proto;
+using VL.Core.Import;
 
 [assembly: ImportAsIs(Namespace = "VL.IO.Proto.Actor", Category = "IO.Proto.Actor")]
+
+[assembly: ImportType(typeof(IActor))]
