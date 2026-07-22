@@ -12,7 +12,10 @@ An implementation of [Proto.Actor](https://proto.actor/) for [vvvv](https://vvvv
 
 ### Installation
 ```sh
-// TODO
+// vvvv
+nuget install Proto.Actor -version 1.7.0
+nuget install Proto.Remote -version 1.7.0
+
 ```
 
 ### Getting Started
