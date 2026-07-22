@@ -1,13 +1,11 @@
 <Project>
   <PropertyGroup>
     <VLVersion>2025.7.4</VLVersion>
-    <ProtoActorVersion>1.8.1-alpha.0.2</ProtoActorVersion>
+    <ProtoActorVersion>1.7.0</ProtoActorVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Proto.Actor" Version="$(ProtoActorVersion)" />
     <PackageReference Include="Proto.Remote" Version="$(ProtoActorVersion)" />
     <PackageReference Include="VL.Core" Version="$(VLVersion)" />
-    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
   </ItemGroup>
 </Project>

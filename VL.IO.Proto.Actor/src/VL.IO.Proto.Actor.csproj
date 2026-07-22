@@ -11,6 +11,5 @@
     <PackageReference Include="Proto.Actor" />
     <PackageReference Include="Proto.Remote" />
     <PackageReference Include="VL.Core" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
   </ItemGroup>
 </Project>

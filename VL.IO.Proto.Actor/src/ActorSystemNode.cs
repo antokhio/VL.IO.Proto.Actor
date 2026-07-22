@@ -1,12 +1,14 @@
 ﻿using Proto;
-using Proto.Remote;
 using Proto.Remote.GrpcNet;
 using VL.Core;
 using VL.Core.Import;
 
+[assembly: ImportType(typeof(ActorSystem), Category = "IO.Proto.Actor")]
+[assembly: ImportType(typeof(ActorSystemConfig), Category = "IO.Proto.Actor")]
+
 namespace VL.IO.Proto.Actor
 {
-    [ProcessNode]
+    [ProcessNode(Name = "ActorSystem")]
     public class ActorSystemNode : IDisposable
     {
         private readonly ActorSystem _actorSystem;
@@ -14,7 +16,6 @@ namespace VL.IO.Proto.Actor
 
         public ActorSystemNode(NodeContext nodeContext)
         {
-            Log.SetLoggerFactory(new Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory());
             _actorSystem = new ActorSystem();
         }
 
@@ -26,7 +27,7 @@ namespace VL.IO.Proto.Actor
             if (_host == host && _port == port)
                 return;
 
-            var config = RemoteConfig.BindTo(host, port);
+            var config = GrpcNetRemoteConfig.BindTo(host, port);
 
             _remote?.ShutdownAsync().Wait();
             _remote = new GrpcNetRemote(_actorSystem, config);
@@ -37,9 +38,9 @@ namespace VL.IO.Proto.Actor
             _remote?.StartAsync().Wait();
         }
 
-        public bool IsRunning => _remote?.Started ?? false;
-
         public ActorSystem Output => _actorSystem;
+
+        public bool IsRunning => _remote?.Started ?? false;
 
         public void Dispose()
         {
